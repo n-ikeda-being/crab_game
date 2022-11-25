@@ -1,0 +1,26 @@
+{
+  "name": "crab_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shoot.js",
+  "bin": {
+    "crab_game": "./shoot.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "n-ikeda",
+  "license": "ISC",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-ikeda-being/crab_game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n-ikeda-being/crab_game/issues"
+  },
+  "homepage": "https://github.com/n-ikeda-being/crab_game#readme"
+}
