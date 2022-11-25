@@ -4,14 +4,14 @@
 const { Select } = require('enquirer')
 
 const janken = ['グー', 'チョキ', 'パー']
-let jankenRandom = Math.floor(Math.random() * 3) // ランダムな数字を出す
+let cpu_hand = Math.floor(Math.random() * 3) // ランダムな数字を出す
 
-if (jankenRandom === 0) {
-  jankenRandom = 'グー'
-} else if (jankenRandom === 1) {
-  jankenRandom = 'チョキ'
-} else if (jankenRandom === 2) {
-  jankenRandom = 'パー'
+if (cpu_hand === 0) {
+  cpu_hand = 'グー'
+} else if (cpu_hand === 1) {
+  cpu_hand = 'チョキ'
+} else if (cpu_hand === 2) {
+  cpu_hand = 'パー'
 }
 
 function main () {
@@ -42,27 +42,27 @@ class Janken {
 
     prompt.run()
       .then((answer) => {
-        console.log('カニくんは', jankenRandom, 'を選びました \n')
-        if (answer === jankenRandom) {
+        console.log('カニくんは', cpu_hand, 'を選びました \n')
+        if (answer === cpu_hand) {
           console.log('あいこです')
-        } else if (answer === rock && jankenRandom === scissors) {
+        } else if (answer === rock && cpu_hand === scissors) {
           console.log(win)
-        } else if (answer === rock && jankenRandom === paper) {
+        } else if (answer === rock && cpu_hand === paper) {
           console.log(lose)
-        } else if (answer === scissors && jankenRandom === rock) {
+        } else if (answer === scissors && cpu_hand === rock) {
           console.log(lose)
-        } else if (answer === scissors && jankenRandom === paper) {
+        } else if (answer === scissors && cpu_hand === paper) {
           console.log(win)
-        } else if (answer === paper && jankenRandom === rock) {
+        } else if (answer === paper && cpu_hand === rock) {
           console.log(win)
-        } else if (answer === paper && jankenRandom === scissors) {
+        } else if (answer === paper && cpu_hand === scissors) {
           console.log(lose)
         }
 
         console.log(
           '                                            ------------------------------------------ \n',
           '(ｶ)|・||・|(ﾆ)　(ｶ)|-||-|(ﾆ)　(ｶ)|^||^|(ﾆ)  <遊んでくれてありがとう！また来てね！    | \n',
-          '≡(　　　)≡   ≡(　　　)≡   ≡(　　　)≡  ------------------------------------------ \n'
+          ' ≡(　　　)≡   ≡(　　　)≡  ≡(　　　)≡  ------------------------------------------ \n'
         )
       })
       .catch(console.error)
