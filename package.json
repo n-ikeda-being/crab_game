@@ -1,6 +1,6 @@
 {
   "name": "crab_game",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "shoot.js",
   "bin": {
@@ -12,9 +12,9 @@
   "author": "n-ikeda",
   "license": "ISC",
   "dependencies": {
+    "crab_game": "^1.0.2",
     "enquirer": "^2.3.6"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n-ikeda-being/crab_game.git"
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/n-ikeda-being/crab_game/issues"
   },
-  "homepage": "https://github.com/n-ikeda-being/crab_game#readme"
+  "homepage": "https://github.com/n-ikeda-being/crab_game#readme",
+  "devDependencies": {
+    "eslint": "^8.28.0"
+  }
 }
