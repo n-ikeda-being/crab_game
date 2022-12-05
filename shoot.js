@@ -2,20 +2,9 @@
 
 const { Select } = require('enquirer')
 
-const janken = ['グー', 'チョキ', 'パー']
-let cpu_hand = Math.floor(Math.random() * 3) // ランダムな数字を出す
-
-if (cpu_hand === 0) {
-  cpu_hand = 'グー'
-} else if (cpu_hand === 1) {
-  cpu_hand = 'チョキ'
-} else if (cpu_hand === 2) {
-  cpu_hand = 'パー'
-}
-
 function main () {
   const janken = new Janken()
-  janken.firstMessage()
+  janken.firstMessage ()
   janken.selectHand()
 }
 
@@ -31,7 +20,16 @@ class Janken {
 
   selectHand () {
     const message = '最初はグー！じゃんけん…？'
-    const hand = janken
+    let cpuHand = Math.floor(Math.random() * 3) // ランダムな数字を出す
+    if (cpuHand === 0) {
+      cpuHand = 'グー'
+    } else if (cpuHand === 1) {
+      cpuHand = 'チョキ'
+    } else if (cpuHand === 2) {
+      cpuHand = 'パー'
+    }
+    const hands = ['グー', 'チョキ', 'パー']
+    const hand = hands
     const prompt = this.#selectPrompt(message, hand)
     const lose = '残念、あなたの負けです…'
     const win = 'おめでとう！あなたの勝ちです！'
@@ -41,20 +39,20 @@ class Janken {
 
     prompt.run()
       .then((answer) => {
-        console.log('カニくんは', cpu_hand, 'を選びました \n')
-        if (answer === cpu_hand) {
+        console.log('カニくんは', cpuHand, 'を選びました \n')
+        if (answer === cpuHand) {
           console.log('あいこです')
-        } else if (answer === rock && cpu_hand === scissors) {
+        } else if (answer === rock && cpuHand === scissors) {
           console.log(win)
-        } else if (answer === rock && cpu_hand === paper) {
+        } else if (answer === rock && cpuHand === paper) {
           console.log(lose)
-        } else if (answer === scissors && cpu_hand === rock) {
+        } else if (answer === scissors && cpuHand === rock) {
           console.log(lose)
-        } else if (answer === scissors && cpu_hand === paper) {
+        } else if (answer === scissors && cpuHand === paper) {
           console.log(win)
-        } else if (answer === paper && cpu_hand === rock) {
+        } else if (answer === paper && cpuHand === rock) {
           console.log(win)
-        } else if (answer === paper && cpu_hand === scissors) {
+        } else if (answer === paper && cpuHand === scissors) {
           console.log(lose)
         }
 
@@ -75,4 +73,5 @@ class Janken {
     })
   }
 }
-main()
+
+main ()
