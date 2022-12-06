@@ -2,12 +2,6 @@
 
 const { Select } = require('enquirer')
 
-function main () {
-  const janken = new Janken()
-  janken.firstMessage ()
-  janken.selectHand()
-}
-
 class Janken {
 
   firstMessage () {
@@ -29,8 +23,7 @@ class Janken {
       cpuHand = 'パー'
     }
     const hands = ['グー', 'チョキ', 'パー']
-    const hand = hands
-    const prompt = this.#selectPrompt(message, hand)
+    const prompt = this.#selectPrompt(message, hands)
     const lose = '残念、あなたの負けです…'
     const win = 'おめでとう！あなたの勝ちです！'
     const rock = 'グー'
@@ -65,13 +58,15 @@ class Janken {
       .catch(console.error)
   }
 
-  #selectPrompt (message, hand) {
+  #selectPrompt (message, hands) {
     return new Select({
       type: 'select',
       message,
-      choices: hand
+      choices: hands
     })
   }
 }
 
-main ()
+const janken = new Janken()
+janken.firstMessage ()
+janken.selectHand()
