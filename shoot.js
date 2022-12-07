@@ -4,6 +4,11 @@ const { Select } = require('enquirer')
 
 class Janken {
 
+  run () {
+    this.firstMessage()
+    this.selectHand()
+  }
+
   firstMessage () {
     console.log(
       '                                             ----------------------------------------- \n',
@@ -68,5 +73,4 @@ class Janken {
 }
 
 const janken = new Janken()
-janken.firstMessage ()
-janken.selectHand()
+janken.run()
