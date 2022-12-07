@@ -5,11 +5,11 @@ const { Select } = require('enquirer')
 class Janken {
 
   run () {
-    this.firstMessage()
-    this.selectHand()
+    this.#firstMessage()
+    this.#selectHand()
   }
 
-  firstMessage () {
+  #firstMessage () {
     console.log(
       '                                             ----------------------------------------- \n',
       '(ｶ)|^||^|(ﾆ)　(ｶ)|・||・|(ﾆ)　(ｶ)|-||-|(ﾆ)  <こんにちは！僕たちとじゃんけんで遊ぼう！| \n',
@@ -17,7 +17,7 @@ class Janken {
     )
   }
 
-  selectHand () {
+  #selectHand () {
     const message = '最初はグー！じゃんけん…？'
     let cpuHand = Math.floor(Math.random() * 3) // ランダムな数字を出す
     if (cpuHand === 0) {
